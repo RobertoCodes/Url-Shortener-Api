@@ -1,11 +1,16 @@
 class Api::ShortUrlsController < ApplicationController
 
   def create
-    @short_url = ShortUrl.generate_from_url(params[:url])
-    if @short_url.save
-      render :show
+    if params[:url].is_a?(Array)
+      @short_urls = handle_url_array(params[:url])
+      render :show_array
     else
-      render json: @short_url.errors.full_messages
+      @short_url = ShortUrl.generate_from_url(params[:url])
+      if @short_url.save
+        render :show
+      else
+        render json: @short_url.errors.full_messages
+      end
     end
   end
 
