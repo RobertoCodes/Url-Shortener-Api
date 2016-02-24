@@ -1,28 +1,29 @@
-== README
+== Url Shortener Api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple api to create short urls with custom domain. 
 
-Things you may want to cover:
+GET /short_urls/:url (Create shortened url)
 
-* Ruby version
+Input
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+url: Input URL to shorten
+Output (JSON)
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+url: Shortened URL
+
+GET /short_urls/:id
+
+Input
+
+Input hash to get original URL
+
+Output (JSON)
+
+url: Original URL
+
+
+GET /:short_url (redirect)
+
+
+Input short url => Redirect to original URL
