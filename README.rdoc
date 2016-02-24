@@ -7,10 +7,10 @@ A simple api to create short urls with custom domain.
 * Input URL to shorten
 * Output (JSON): Shortened URL
 
-GET /short_urls/:id
+==GET /short_urls/:id
 
 * Output (JSON): short_url, original url, short_url's visit count
 
-GET /:short_url (redirect)
+==GET /:short_url (redirect)
 
 * Input short url to Redirect to original URL
