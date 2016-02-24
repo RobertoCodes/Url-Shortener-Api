@@ -23,6 +23,12 @@ class Api::ShortUrlsController < ApplicationController
     end
   end
 
+  def redirect
+    url_obj = ShortUrl.find_by_short(params[:short])
+    redirect_to url_obj.url
+    ShortUrl.increment_counter(:visit_count, url_obj.id)
+  end
+
 private
 def handle_url_array(url_array)
   short_urls = []
