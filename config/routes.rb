@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  get ':short' => 'api/short_urls#redirect'
+
+  namespace :api, defaults: {format: :json} do
+    resources :short_urls, only: [:show, :create]
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
