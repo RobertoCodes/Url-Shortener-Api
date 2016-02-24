@@ -1,29 +1,16 @@
-== Url Shortener Api
+= Url Shortener Api
 
 A simple api to create short urls with custom domain. 
 
-= GET /short_urls/:url (Create shortened url)
+== GET /short_urls/:url (Create shortened url)
 
-Input
-
-url: Input URL to shorten
-Output (JSON)
-
-
-url: Shortened URL
+* Input URL to shorten
+* Output (JSON): Shortened URL
 
 GET /short_urls/:id
 
-Input
-
-Input hash to get original URL
-
-Output (JSON)
-
-url: Original URL
-
+* Output (JSON): short_url, original url, short_url's visit count
 
 GET /:short_url (redirect)
 
-
-Input short url => Redirect to original URL
+* Input short url to Redirect to original URL
